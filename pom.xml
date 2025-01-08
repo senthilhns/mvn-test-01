@@ -9,6 +9,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -17,4 +18,29 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    
+    <!-- Distribution Management for Deployment -->
+    <distributionManagement>
+        <repository>
+            <id>mvn_repo_deploy_releases_01</id>
+            <url>https://trialbqpt94.jfrog.io/artifactory/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>mvn_repo_deploy_snapshots_01</id>
+            <url>https://trialbqpt94.jfrog.io/artifactory/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <!-- Build Plugins -->
+    <build>
+        <plugins>
+            <!-- Maven Deploy Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0-M1</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
+
